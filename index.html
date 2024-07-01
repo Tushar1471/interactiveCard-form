@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CARD FORM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <section>
+      <div id="cardContainer">
+        <img src="./assets/bg-main-desktop.png" alt="bg-main-desktop" />
+        <div id="cardHolder">
+          <div id="atmCredentials" class="cards">
+            <img src="./assets/bg-card-front.png" alt="bg-card-front" />
+          </div>
+          <div id="cvvCred" class="cards">
+            <img src="./assets/bg-card-back.png" alt="bg-card-back" />
+          </div>
+        </div>
+      </div>
+      <div id="cardContent">
+        <form>
+          <div id="cardHolder" class="mcard">
+            <label for="card_holder_name">CARD HOLDER</label>
+            <br />
+            <input
+              type="text"
+              name="card_holder_name"
+              id="card_holder_name"
+              placeholder="e.g. Harry Anniston"
+              required
+            />
+          </div>
+          <div id="cardNumber" class="mcard">
+            <label for="card_number">CARD NUMBER</label>
+            <br />
+            <input
+              type="text"
+              name="card_number"
+              id="card_number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+            />
+          </div>
+          <div id="secureCred" class="mcard">
+            <div id="expDate">
+              <div id="month">
+                <label for="month">EXP.DATE</label>
+                <br />
+                <input
+                  type="number"
+                  name="month"
+                  id="month"
+                  placeholder="MM"
+                  required
+                />
+              </div>
+              <div id="year">
+                <label for="year">(MM/YY)</label>
+                <br />
+                <input type="number" name="year" id="year" placeholder="YY" />
+              </div>
+            </div>
+            <div id="cvc">
+              <label for="cvc">CVC</label>
+              <br />
+              <input
+                type="number"
+                name="cvc"
+                id="cvc"
+                placeholder="e.g 123"
+                required
+              />
+            </div>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

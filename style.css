@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    outline: none;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+section>#cardContainer {
+    width: 45%;
+    height: inherit;
+    position: relative;
+}
+
+section>#cardContainer>img {
+    width: 70%;
+    height: inherit;
+}
+
+section>#cardContainer>#cardHolder {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: inherit;
+}
+
+section>#cardContainer>#cardHolder>.cards {
+    width: 330px;
+    height: 200px;
+    border-radius: 5px;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials {
+    position: absolute;
+    left: 30%;
+    top: 15%;
+}
+
+section>#cardContainer>#cardHolder>#cvvCred {
+    position: absolute;
+    top: 54%;
+    right: 0;
+}
+
+section>#cardContainer>#cardHolder>.cards>img {
+    width: 100%;
+    height: 100%;
+}
+
+section>#cardContent {
+    width: 50%;
+    height: inherit;
+    display: flex;
+    align-items: center;
+}
+
+section>#cardContent>form {
+    width: 60%;
+}
+
+section>#cardContent>form>.mcard {
+    margin-bottom: 15px;
+}
+
+section>#cardContent>form>.mcard {
+    font-size: 20px;
+}
+
+section>#cardContent>form>.mcard>input {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid rgb(32, 32, 32);
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+section>#cardContent>form>#secureCred {
+    display: flex;
+}
+
+section>#cardContent>form>#secureCred>#expDate {
+    display: flex;
+}
+
+section>#cardContent>form>.mcard>div>div>input {
+    width: 40%;
+    height: 40px;
+    border: 1.5px solid rgb(32, 32, 32);
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+section>#cardContent>form>.mcard>#cvc>input {
+    width: 100%;
+    height: 40px;
+    border: 1.5px solid rgb(32, 32, 32);
+    border-radius: 5px;
+    text-indent: 5px;
+    font-size: 18px;
+}
+
+section>#cardContent>form>button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 17);
+    color: antiquewhite;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
