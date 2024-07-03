@@ -14,22 +14,70 @@
         <div id="cardHolder">
           <div id="atmCredentials" class="cards">
             <img src="./assets/bg-card-front.png" alt="bg-card-front" />
+            <div id="dynamic_Credentials">
+              <div id="svg">
+                <svg
+                  width="84"
+                  height="47"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <ellipse
+                    cx="23.478"
+                    cy="23.5"
+                    rx="23.478"
+                    ry="23.5"
+                    fill="#fff"
+                  />
+                  <path
+                    d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                    stroke="#fff"
+                  />
+                </svg>
+              </div>
+              <input
+                type="text"
+                id="atmNum"
+                placeholder="0000 0000 0000 0000"
+                readonly
+                disabled
+              />
+              <div id="sampCred">
+                <input
+                  type="text"
+                  id="readName"
+                  placeholder="Harry Anniston"
+                  readonly
+                />
+                <input type="number" id="readMonth" placeholder="00" readonly />
+                <p style="color: white; padding: 4px">/</p>
+                <input type="number" id="readYear" placeholder="00" readonly />
+              </div>
+            </div>
           </div>
           <div id="cvvCred" class="cards">
-            <img src="./assets/bg-card-back.png" alt="bg-card-back" />
+            <img
+              style="position: relative"
+              src="./assets/bg-card-back.png"
+              alt="bg-card-back"
+            />
+            <div id="cvcCredentials">
+              <input type="text" id="readCvc" placeholder="123" readonly />
+            </div>
           </div>
         </div>
       </div>
       <div id="cardContent">
         <form>
           <div id="cardHolder" class="mcard">
-            <label for="card_holder_name">CARD HOLDER</label>
+            <label for="card_holder_name">CARDHOLDER NAME</label>
             <br />
             <input
               type="text"
               name="card_holder_name"
               id="card_holder_name"
               placeholder="e.g. Harry Anniston"
+              oninput="onInputName()"
               required
             />
           </div>
@@ -37,16 +85,18 @@
             <label for="card_number">CARD NUMBER</label>
             <br />
             <input
-              type="text"
+              type="number"
               name="card_number"
               id="card_number"
               placeholder="e.g. 1234 5678 9123 0000"
+              oninput="onInput()"
               required
             />
+            <p id="showError">Card number should be exceeded.</p>
           </div>
           <div id="secureCred" class="mcard">
             <div id="expDate">
-              <div id="month">
+              <div id="fillMonth">
                 <label for="month">EXP.DATE</label>
                 <br />
                 <input
@@ -54,16 +104,23 @@
                   name="month"
                   id="month"
                   placeholder="MM"
+                  oninput="onInputMonth()"
                   required
                 />
               </div>
-              <div id="year">
+              <div id="fillYear">
                 <label for="year">(MM/YY)</label>
                 <br />
-                <input type="number" name="year" id="year" placeholder="YY" />
+                <input
+                  type="number"
+                  name="year"
+                  id="year"
+                  placeholder="YY"
+                  oninput="onInputYear()"
+                />
               </div>
             </div>
-            <div id="cvc">
+            <div id="fillCvc">
               <label for="cvc">CVC</label>
               <br />
               <input
@@ -71,12 +128,46 @@
                 name="cvc"
                 id="cvc"
                 placeholder="e.g 123"
+                oninput="onInputCvc()"
                 required
               />
             </div>
           </div>
           <button type="submit">Submit</button>
         </form>
+        <div id="showApproveCred">
+          <div id="approve_Credentials">
+            <svg
+              width="80"
+              height="80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="40" cy="40" r="40" fill="url(#a)" />
+              <path
+                d="M28 39.92 36.08 48l16-16"
+                stroke="#fff"
+                stroke-width="3"
+              />
+              <defs>
+                <linearGradient
+                  id="a"
+                  x1="-23.014"
+                  y1="11.507"
+                  x2="0"
+                  y2="91.507"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop stop-color="#6348FE" />
+                  <stop offset="1" stop-color="#610595" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <h1>THANK YOU</h1>
+            <p>We've added your Card Credentials.</p>
+            <button id="submit">Continue</button>
+          </div>
+        </div>
       </div>
     </section>
     <script src="script.js"></script>

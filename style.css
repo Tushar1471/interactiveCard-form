@@ -22,6 +22,12 @@ section {
     justify-content: space-between;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 section>#cardContainer {
     width: 45%;
     height: inherit;
@@ -43,7 +49,13 @@ section>#cardContainer>#cardHolder {
 section>#cardContainer>#cardHolder>.cards {
     width: 330px;
     height: 200px;
-    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgb(56, 56, 56);
+    border-radius: 10px;
+}
+
+section>#cardContainer>#cardHolder>.cards>img {
+    width: 100%;
+    height: 100%;
 }
 
 section>#cardContainer>#cardHolder>#atmCredentials {
@@ -55,12 +67,77 @@ section>#cardContainer>#cardHolder>#atmCredentials {
 section>#cardContainer>#cardHolder>#cvvCred {
     position: absolute;
     top: 54%;
-    right: 0;
+    right: 2%;
 }
 
 section>#cardContainer>#cardHolder>.cards>img {
     width: 100%;
     height: 100%;
+    position: relative;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials {
+    position: absolute;
+    top: 0;
+    width: inherit;
+    height: inherit;
+    padding: 15px;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#svg {
+    width: 100%;
+    height: 30%;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#svg>svg {
+    width: inherit;
+    height: 100%;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#atmNum {
+    width: 100%;
+    height: 40px;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    margin-top: 15px;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>input {
+    flex: 5;
+    height: 30px;
+    font-family: inherit;
+    font-size: inherit;
+    border: inherit;
+    outline: inherit;
+    background: inherit;
+    font-weight: inherit;
+    color: white;
+    letter-spacing: 2px;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>#readMonth {
+    flex: 1;
+    text-align: end;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>#readYear {
+    flex: 1;
+}
+
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#atmNum::placeholder,
+section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>input::placeholder {
+    color: white;
 }
 
 section>#cardContent {
@@ -74,12 +151,40 @@ section>#cardContent>form {
     width: 60%;
 }
 
+section>#cardContent>#showApproveCred {
+    display: none;
+    width: 60%;
+    height: 40%;
+}
+
+section>#cardContent>#showApproveCred>#approve_Credentials {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+section>#cardContent>#showApproveCred>#approve_Credentials>#submit {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: rgb(15, 15, 17);
+    color: #f0f0f0;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
 section>#cardContent>form>.mcard {
     margin-bottom: 15px;
 }
 
-section>#cardContent>form>.mcard {
-    font-size: 20px;
+section>#cardContent>form>.mcard>label {
+    font-size: 15px;
+    font-weight: 400;
 }
 
 section>#cardContent>form>.mcard>input {
@@ -87,20 +192,41 @@ section>#cardContent>form>.mcard>input {
     height: 40px;
     border: 1.5px solid rgb(32, 32, 32);
     border-radius: 5px;
-    text-indent: 5px;
+    text-indent: 10px;
     font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
 }
 
 section>#cardContent>form>#secureCred {
+    width: 100%;
+    height: inherit;
     display: flex;
+    align-items: center;
+    padding: 2px;
 }
 
 section>#cardContent>form>#secureCred>#expDate {
     display: flex;
+    flex: 3;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/* section>#cardContent>.hideForm {
+    display: none;
+} */
+
+#showError {
+    display: none;
+    color: red;
+    font-size: medium;
+    margin-top: 2px;
 }
 
 section>#cardContent>form>.mcard>div>div>input {
-    width: 40%;
+    width: 70%;
     height: 40px;
     border: 1.5px solid rgb(32, 32, 32);
     border-radius: 5px;
@@ -108,7 +234,41 @@ section>#cardContent>form>.mcard>div>div>input {
     font-size: 18px;
 }
 
-section>#cardContent>form>.mcard>#cvc>input {
+#cvcCredentials {
+    position: absolute;
+    width: 30%;
+    top: 42.75%;
+    right: 10%;
+    height: 25px;
+}
+
+#cvcCredentials>input {
+    width: 100%;
+    height: 100%;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    text-align: end;
+}
+
+#cvcCredentials>input::placeholder {
+    color: white;
+}
+
+section>#cardContent>form>.mcard>#fillCvc {
+    flex: 3;
+}
+
+section>#cardContent>form>.mcard>#fillCvc>label {
+    font-size: 15px;
+    font-weight: 400;
+}
+
+section>#cardContent>form>.mcard>#fillCvc>input {
     width: 100%;
     height: 40px;
     border: 1.5px solid rgb(32, 32, 32);
@@ -122,7 +282,7 @@ section>#cardContent>form>button {
     height: 40px;
     border-radius: 5px;
     background-color: rgb(15, 15, 17);
-    color: antiquewhite;
+    color: #f0f0f0;
     font-size: 15px;
     font-weight: 600;
     border: none;
