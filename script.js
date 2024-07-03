@@ -1,4 +1,4 @@
-const form = document.querySelector("form");
+let form = document.querySelector("form");
 let atmNum = document.getElementById("atmNum");
 let readName = document.getElementById("readName");
 let readMonth = document.getElementById("readMonth");
@@ -32,10 +32,11 @@ function onInputYear() {
 }
 
 function onInputCvc() {
-    let inputCvc = document.getElementById("cvc").value;
-    readCvc.value = inputCvc;
+    let inputCvc = document.getElementById("cvc");
+    let cvcVal = inputCvc.value;
+    cvcVal.length == 0 ? inputCvc.style.background = "red" : inputCvc.style.background = "white";
+    readCvc.value = cvcVal;
 }
-
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     form.style.display = "none";

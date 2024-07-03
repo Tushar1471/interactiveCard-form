@@ -213,11 +213,6 @@ section>#cardContent>form>#secureCred>#expDate {
     font-weight: 400;
 }
 
-
-/* section>#cardContent>.hideForm {
-    display: none;
-} */
-
 #showError {
     display: none;
     color: red;
@@ -287,4 +282,87 @@ section>#cardContent>form>button {
     font-weight: 600;
     border: none;
     cursor: pointer;
+}
+
+@media screen and (max-width:624px) {
+    section {
+        width: 100%;
+        flex-direction: column;
+    }
+    section>#cardContainer {
+        width: 100%;
+        height: 40%;
+    }
+    section>#cardContent {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    section>#cardContainer>img {
+        width: 100%;
+        height: 100%;
+    }
+    section>#cardContainer>#cardHolder {
+        width: 100%;
+        height: 100%;
+    }
+    section>#cardContainer>#cardHolder>.cards {
+        width: 220px;
+        height: 120px;
+    }
+    section>#cardContent>form {
+        width: 100%;
+        padding: 5px;
+    }
+    section>#cardContent>#showApproveCred {
+        width: 100%;
+        height: 70%;
+        padding: 5px;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials {
+        left: 5%;
+        z-index: 1000;
+    }
+    section>#cardContainer>#cardHolder>#cvvCred {
+        top: 42%;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials {
+        padding: 10px;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#svg {
+        width: 50%;
+        height: 50%;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#svg>svg {
+        width: 100%;
+        height: 100%;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#atmNum {
+        height: 20px;
+        font-size: 15px;
+        margin-top: 7px;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred {
+        margin-top: 2px;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>input {
+        height: 20px;
+        flex: 5;
+        font-size: 9px;
+    }
+    section>#cardContainer>#cardHolder>#atmCredentials>#dynamic_Credentials>#sampCred>#slash {
+        font-size: 10px;
+    }
+    #cvcCredentials {
+        /* position: absolute; */
+        width: 50%;
+        top: 40%;
+        right: 10%;
+        height: 25px;
+    }
+    #cvcCredentials>input {
+        font-size: 12px;
+    }
 }
