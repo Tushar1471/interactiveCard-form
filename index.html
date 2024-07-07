@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CARD FORM</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <section>
-      <div id="cardContainer">
-        <img src="./assets/bg-main-desktop.png" alt="bg-main-desktop" />
-        <div id="cardHolder">
-          <div id="atmCredentials" class="cards">
-            <img src="./assets/bg-card-front.png" alt="bg-card-front" />
-            <div id="dynamic_Credentials">
-              <div id="svg">
-                <svg
-                  width="84"
-                  height="47"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+        <div id="cardContainer">
+            <img src="./assets/bg-main-desktop.png" alt="bg-main-desktop" />
+            <div id="cardHolder">
+                <div id="atmCredentials" class="cards">
+                    <img src="./assets/bg-card-front.png" alt="bg-card-front" />
+                    <div id="dynamic_Credentials">
+                        <div id="svg">
+                            <svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse
                     cx="23.478"
                     cy="23.5"
@@ -34,115 +30,61 @@
                     stroke="#fff"
                   />
                 </svg>
-              </div>
-              <input
-                type="text"
-                id="atmNum"
-                placeholder="0000 0000 0000 0000"
-                readonly
-                disabled
-              />
-              <div id="sampCred">
-                <input
-                  type="text"
-                  id="readName"
-                  placeholder="Harry Anniston"
-                  readonly
-                />
-                <input type="number" id="readMonth" placeholder="00" readonly />
-                <p id="slash" style="color: white; padding: 4px">/</p>
-                <input type="number" id="readYear" placeholder="00" readonly />
-              </div>
+                        </div>
+                        <input type="text" id="atmNum" placeholder="0000 0000 0000 0000" readonly disabled />
+                        <div id="sampCred">
+                            <input type="text" id="readName" placeholder="Harry Anniston" readonly />
+                            <input type="number" id="readMonth" placeholder="00" readonly />
+                            <p id="slash" style="color: white; padding: 4px">/</p>
+                            <input type="number" id="readYear" placeholder="00" readonly />
+                        </div>
+                    </div>
+                </div>
+                <div id="cvvCred" class="cards">
+                    <img style="position: relative" src="./assets/bg-card-back.png" alt="bg-card-back" />
+                    <div id="cvcCredentials">
+                        <input type="text" id="readCvc" placeholder="123" readonly />
+                    </div>
+                </div>
             </div>
-          </div>
-          <div id="cvvCred" class="cards">
-            <img
-              style="position: relative"
-              src="./assets/bg-card-back.png"
-              alt="bg-card-back"
-            />
-            <div id="cvcCredentials">
-              <input type="text" id="readCvc" placeholder="123" readonly />
-            </div>
-          </div>
         </div>
-      </div>
-      <div id="cardContent">
-        <form>
-          <div id="cardHolder" class="mcard">
-            <label for="card_holder_name">CARDHOLDER NAME</label>
-            <br />
-            <input
-              type="text"
-              name="card_holder_name"
-              id="card_holder_name"
-              placeholder="e.g. Harry Anniston"
-              oninput="onInputName()"
-              required
-            />
-          </div>
-          <div id="cardNumber" class="mcard">
-            <label for="card_number">CARD NUMBER</label>
-            <br />
-            <input
-              type="number"
-              name="card_number"
-              id="card_number"
-              placeholder="e.g. 1234 5678 9123 0000"
-              oninput="onInput()"
-              required
-            />
-            <p id="showError">Card number should be exceeded.</p>
-          </div>
-          <div id="secureCred" class="mcard">
-            <div id="expDate">
-              <div id="fillMonth">
-                <label for="month">EXP.DATE</label>
-                <br />
-                <input
-                  type="number"
-                  name="month"
-                  id="month"
-                  placeholder="MM"
-                  oninput="onInputMonth()"
-                  required
-                />
-              </div>
-              <div id="fillYear">
-                <label for="year">(MM/YY)</label>
-                <br />
-                <input
-                  type="number"
-                  name="year"
-                  id="year"
-                  placeholder="YY"
-                  oninput="onInputYear()"
-                />
-              </div>
-            </div>
-            <div id="fillCvc">
-              <label for="cvc">CVC</label>
-              <br />
-              <input
-                type="number"
-                name="cvc"
-                id="cvc"
-                placeholder="e.g 123"
-                oninput="onInputCvc()"
-                required
-              />
-            </div>
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-        <div id="showApproveCred">
-          <div id="approve_Credentials">
-            <svg
-              width="80"
-              height="80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+        <div id="cardContent">
+            <form>
+                <div id="cardHolder" class="mcard">
+                    <label for="card_holder_name">CARDHOLDER NAME</label>
+                    <br />
+                    <input type="text" name="card_holder_name" id="card_holder_name" placeholder="e.g. Harry Anniston" oninput="onInputName()" required />
+                </div>
+                <div id="cardNumber" class="mcard">
+                    <label for="card_number">CARD NUMBER</label>
+                    <br />
+                    <input type="number" name="card_number" id="card_number" placeholder="e.g. 1234 5678 9123 0000" oninput="onInput()" required />
+                    <p id="showError">Card number should be exceeded.</p>
+                </div>
+                <div id="secureCred" class="mcard">
+                    <div id="expDate">
+                        <div id="fillMonth">
+                            <label for="month">EXP.DATE</label>
+                            <br />
+                            <input type="number" name="month" id="month" placeholder="MM" oninput="onInputMonth()" required />
+                        </div>
+                        <div id="fillYear">
+                            <label for="year">(MM/YY)</label>
+                            <br />
+                            <input type="number" name="year" id="year" placeholder="YY" oninput="onInputYear()" />
+                        </div>
+                    </div>
+                    <div id="fillCvc">
+                        <label for="cvc">CVC</label>
+                        <br />
+                        <input type="number" name="cvc" id="cvc" placeholder="e.g 123" oninput="onInputCvc()" required />
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="showApproveCred">
+                <div id="approve_Credentials">
+                    <svg width="80" height="80" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="40" cy="40" r="40" fill="url(#a)" />
               <path
                 d="M28 39.92 36.08 48l16-16"
@@ -163,13 +105,14 @@
                 </linearGradient>
               </defs>
             </svg>
-            <h1>THANK YOU</h1>
-            <p>We've added your Card Credentials.</p>
-            <button id="submit">Continue</button>
-          </div>
+                    <h1>THANK YOU</h1>
+                    <p>We've added your Card Credentials.</p>
+                    <button id="submit">Continue</button>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
     <script src="script.js"></script>
-  </body>
+</body>
+
 </html>
